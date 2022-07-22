@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.boton {
+    width: 46px;
+    height: 68px;
+    font-size: 32px;
+    background-color: #efc838;
+    -moz-border-radius: 50% 50% 50% 50% /10% 10% 60% 60% ;
+    -webkit-border-radius: 50% 50% 50% 50% / 10% 10% 60% 60% ;
+    border-radius: 50% 50% 50% 50% / 10% 10% 60% 60% ;
+    margin: 5px;
+}
+
+.fila-botones {
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+
+  
