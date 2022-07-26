@@ -10,7 +10,11 @@ const DisplayUltimaOperacion = () => {
 
 
   return (
-    <div>Ultima Operacion {operacionCompleta}</div>
+    <div>
+     <div className='titleDisplay'><small> Ultima Operacion </small></div> 
+     <div className='ultimaOperacion'>{operacionCompleta}</div>
+      
+      </div>
   )
 }
 

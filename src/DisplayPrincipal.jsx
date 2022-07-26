@@ -6,7 +6,10 @@ const DisplayPrincipal = () => {
     const {status} = useContext(AppContext);
     const numero = status.textDisplay
   return (
-    <div><small>DisplayPrincipal</small> {numero}</div>
+    <div >
+      <div  className='titleDisplay'><small>DisplayPrincipal</small></div>
+      <div className='displayPrincipal'> {numero}</div>
+       </div>
   )
 }
 

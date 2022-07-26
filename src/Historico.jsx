@@ -6,28 +6,17 @@ const Historico = () => {
     const {status} = useContext(AppContext);
     const ListaOperaciones = status.OperacionesList
   return (
-    <div>
-         <table className="table">
-        <thead>
-          <tr>
-            <th>Historico</th>
-          </tr>
-        </thead>
-        <tbody>
-          {ListaOperaciones.map((item, index) => (
-            <tr key={index}>
-              <td>{item}</td>
-             
-                <td>
-                <button type="button" className="btn btn-primary">
-                  Eliminar
-                </button>
-              </td> 
-            </tr>
+    <div className='container2'>
+     <div>Historial de Operaciones</div>
+     <div>     
+      <ul>
+      {ListaOperaciones.map((item, index) => (
+            <li key={index}>
+              <span>{item}</span>
+            </li>
           ))}
-        </tbody>
-      </table>
-
+      </ul>
+      </div>
 
     </div>
   )

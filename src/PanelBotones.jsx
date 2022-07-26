@@ -9,6 +9,7 @@ const PanelBotones = (props) => {
           <Boton name="C" />
           <Boton name="CE" />
           <Boton name="+/-" />
+          <Boton name="%" />
         </div>
         
         <div className='fila-botones'>

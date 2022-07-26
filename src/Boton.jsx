@@ -32,7 +32,7 @@ const Boton = (props) => {
       });
     } else {
       const numeroA = status.OperadorA;
-      const numeroB = parseInt(status.textDisplay);
+      const numeroB = Number(status.textDisplay);
       var resultadoOperacion = 0;
       switch (status.Operacion) {
         case "+":
@@ -40,20 +40,20 @@ const Boton = (props) => {
           console.log("resul", resultadoOperacion);
           break;
         case "-":
-          resultadoOperacion = numeroA - numeroB;
+          resultadoOperacion = Number(numeroA) - Number(numeroB);
           console.log("resul", resultadoOperacion);
           break;
         case "x":
-          resultadoOperacion = numeroA * numeroB;
+          resultadoOperacion = Number(numeroA) * Number(numeroB);
           console.log("resul", resultadoOperacion);
           break;
         case "÷":
-          resultadoOperacion = numeroA / numeroB;
+          resultadoOperacion = Number(numeroA) / Number(numeroB);
           console.log("resul", resultadoOperacion);
           break;
       }
 
-      let UltimaOperacion = numeroA + status.Operacion + numeroB + '=' + resultadoOperacion;   
+      let UltimaOperacion = numeroA + ' ' + status.Operacion + ' ' + numeroB + ' = ' + resultadoOperacion;   
       
       const newOperacionesList = [...status.OperacionesList];
       newOperacionesList.unshift(UltimaOperacion);
@@ -109,12 +109,37 @@ const Boton = (props) => {
           }); 
           break;
         case "+/-":
-            let Xmenos1 = Number(status.textDisplay) * (-1); 
             setStatus({
               ...status,
-              textDisplay: Xmenos1,
-            }); 
-            break;  
+              textDisplay: String(status.textDisplay * (-1)),
+            });
+            break;
+        case "%":
+              setStatus({
+                ...status,
+                textDisplay: String(status.textDisplay / 100),
+              });
+            break;
+        case ".":
+          let datoingresado = status.textDisplay
+          console.log('datoingresado', datoingresado)
+          let haypunto = false
+          for (let x of datoingresado) {
+            if (x == '.') {
+              haypunto = true
+              console.log(haypunto + x)
+              break;
+            }
+          }
+          if (haypunto != true) {
+            setStatus({
+              ...status,
+              textDisplay: String(status.textDisplay + '.'),
+            });  
+          }
+
+          
+        break;       
       }
 
     }
@@ -123,7 +148,7 @@ const Boton = (props) => {
 
   return (
     <div>
-      <button value={props.name} onClick={(event) => {
+      <button className="boton" value={props.name} onClick={(event) => {
           handleChange(event.target.value);
         }}>{props.name}</button>
     </div>

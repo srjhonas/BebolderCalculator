@@ -30,11 +30,15 @@ const App = () => {
 
   return (
     <AppContext.Provider value={{status, setStatus}}>
-    <div>
+    <div className='container'>
+      <div className='panel-botones'>
+        <div>  
         <DisplayUltimaOperacion></DisplayUltimaOperacion>
         <DisplayOperacion></DisplayOperacion>
         <DisplayPrincipal></DisplayPrincipal>
         <PanelBotones></PanelBotones>
+        </div>
+        </div>  
         <Historico></Historico>
     </div>
     </AppContext.Provider>
